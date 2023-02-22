@@ -6,7 +6,7 @@ export const Card = ({ product }) => {
     <div className="grid-item">
         <div className="card">
             <div className="card-image">
-                <img src={`https://loremflickr.com/320/240/${productName}`} alt={productImage} />
+                <img src={`https://loremflickr.com/320/240/${productImage}`} alt={productName} />
             </div>
             <div className="card-content">
                 <h2>{productName}</h2>
