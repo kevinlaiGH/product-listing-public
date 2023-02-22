@@ -17,6 +17,7 @@ function App() {
   };
   return (
       <>
+        <h1>product listing</h1>
         <DropdownFilters types={[...new Set(productData.map(p => p.type))]} onTypeFilterChange={handleTypeFilterChange}/>
         <div className="grid-container">
           {products.map(( item, i) => (
