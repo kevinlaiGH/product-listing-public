@@ -1,10 +1,10 @@
 import "./index.css";
 
 export const Card = ({ product }) => {
-  const { productName, productImage, price } = product;
+  const { productName, productImage, price, isSale } = product;
   return (
     <div className="grid-item">
-        <div className="card">
+        <div className={`card ${isSale ? 'with-image' : ''}`}>
             <div className="card-image">
                 <img src={`https://loremflickr.com/320/240/${productImage}`} alt={productName} />
             </div>

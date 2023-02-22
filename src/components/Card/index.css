@@ -16,6 +16,21 @@
   height: 400px;
   margin: 10px;
   overflow: hidden;
+
+  position: relative;
+}
+
+.card.with-image::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px; /* adjust to your desired size */
+  height: 50px; /* adjust to your desired size */
+  background-image: url("../../assets/sale.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .card-image {
