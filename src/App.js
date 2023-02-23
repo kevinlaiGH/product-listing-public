@@ -7,7 +7,7 @@ import {TextFilters} from "./components/TextFilters";
 import { useSelector } from 'react-redux';
 
 function App() {
-    const products = useSelector((state) => state.app.products);
+    const products = useSelector((state) => state.app.filteredProducts);
   // const handleTypeFilterChange = (selectedType) => {
   //   if (selectedType) {
   //     const filtered = productData.filter((product) => product.type === selectedType);

@@ -5,7 +5,7 @@ import {productFilter} from "../../appSlice";
 
 const DropdownFilters = () => {
     const [selectedType, setSelectedType] = useState('');
-    const allProducts = useSelector((state) => state.app.allProducts)
+    const allProducts = useSelector((state) => state.app.products)
     const dispatch = useDispatch()
 
     const handleTypeChange = (event) => {
