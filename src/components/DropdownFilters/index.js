@@ -1,14 +1,22 @@
-import React, { useState } from 'react';
+import React, {useMemo, useState} from 'react';
 import "./index.css";
+import {useDispatch, useSelector} from "react-redux";
+import {productFilter} from "../../appSlice";
 
-const DropdownFilters = ({ types, onTypeFilterChange }) => {
+const DropdownFilters = () => {
     const [selectedType, setSelectedType] = useState('');
+    const allProducts = useSelector((state) => state.app.allProducts)
+    const dispatch = useDispatch()
 
     const handleTypeChange = (event) => {
         const selectedType = event.target.value;
         setSelectedType(selectedType);
-        onTypeFilterChange(selectedType);
+        dispatch(productFilter(selectedType));
     };
+    const [types] = useMemo(() => {
+        const types = [...new Set(allProducts.map(p => p.type))]
+        return [types]
+    },[allProducts])
 
     return (
         <div className="dropdown-filters">

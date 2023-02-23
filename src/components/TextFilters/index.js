@@ -1,15 +1,18 @@
 import React, {useState} from "react";
-import productData from "../../data/data.json";
+import { useDispatch } from 'react-redux'
+import { search} from "../../appSlice";
 
-export const TextFilters = ({setProducts}) => {
+export const TextFilters = () => {
     const [searchTerm, setSearchTerm] = useState('');
+    const dispatch = useDispatch()
+
     const handleSearch = (e) => {
         e.preventDefault();
         const term = e.target.value
         setSearchTerm(term);
-        const filtered = productData.filter((product) => product.productName.toLowerCase().includes(term.toLowerCase()));
-        setProducts(filtered);
+        dispatch(search(term));
     }
+
     return (
         <div>
             <input
